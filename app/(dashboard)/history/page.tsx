@@ -3,12 +3,13 @@ import React from 'react'
 import {
   Table,
   TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
 import PromptRow from './_components/Prompt'
+export const dynamic = 'force-dynamic'
+export const revalidate = 0;
 async function History() {
   const res = await prisma.prompt.findMany({orderBy : {date : "desc"}})
   return (
